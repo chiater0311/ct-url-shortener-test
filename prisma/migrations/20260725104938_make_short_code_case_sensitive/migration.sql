@@ -1,0 +1,5 @@
+ALTER TABLE `short_urls`
+MODIFY `shortCode` VARCHAR(10)
+CHARACTER SET ascii
+COLLATE ascii_bin
+NOT NULL;
