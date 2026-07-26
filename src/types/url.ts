@@ -7,3 +7,7 @@ export type ShortenUrlSuccessResponse = {
 export type ShortenUrlErrorResponse = {
   error: string;
 };
+
+export type UrlHistoryItem = ShortenUrlSuccessResponse & {
+  createdAt: string;
+};

@@ -8,11 +8,15 @@ import type {
   ShortenUrlSuccessResponse,
 } from "@/types/url";
 
+type UrlShortenerFormProps = {
+  onShortened: (result: ShortenUrlSuccessResponse) => void;
+};
+
 type UrlShortenerFormData = {
   url: string;
 };
 
-export function UrlShortenerForm() {
+export function UrlShortenerForm({ onShortened }: UrlShortenerFormProps) {
   const [result, setResult] = useState<ShortenUrlSuccessResponse | null>(null);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -67,6 +71,7 @@ export function UrlShortenerForm() {
       }
 
       setResult(data);
+      onShortened(data);
     } catch (error) {
       console.error("Failed to submit URL-shortening request:", error);
 

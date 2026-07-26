@@ -1,8 +1,8 @@
-import { UrlShortenerForm } from "@/components/url-shortener-form";
+import { UrlShortenerDashboard } from "@/components/url-shortener-dashboard";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-4 py-16">
+    <main className="flex min-h-screen flex-col items-center bg-slate-50 px-4 py-16">
       <div className="mb-10 max-w-2xl text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">
           URL Shortener
@@ -18,10 +18,10 @@ export default function Home() {
         </p>
       </div>
 
-      <UrlShortenerForm />
+      <UrlShortenerDashboard />
 
       <p className="mt-8 text-center text-sm text-slate-500">
-        Supports HTTP and HTTPS web addresses.
+        Recent history is stored only in this browser.
       </p>
     </main>
   );
