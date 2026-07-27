@@ -30,7 +30,11 @@ https://github.com/chiater0311/ct-url-shortener-test
 
 ### Mobile
 
-## ![Mobile interface](public/images/ui-ux-preview-mobile.jpeg)
+<img
+  src="public/images/ui-ux-preview-mobile.jpeg"
+  alt="Mobile URL shortener interface"
+  width="320"
+/>
 
 ## Features
 
