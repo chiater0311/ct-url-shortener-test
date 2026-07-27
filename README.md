@@ -13,7 +13,7 @@ This project was created as a take-home software-engineering assessment.
 The public deployment URL will be added after deployment.
 
 ```text
-https://ct-url-shortener-test-17yu3grvy-tan-chia-ters-projects.vercel.app/
+https://ct-url-shortener-test.vercel.app/
 ```
 
 ## Repository
@@ -22,7 +22,15 @@ https://ct-url-shortener-test-17yu3grvy-tan-chia-ters-projects.vercel.app/
 https://github.com/chiater0311/ct-url-shortener-test
 ```
 
----
+## Preview
+
+### Desktop
+
+![Desktop interface](public/images/ui-ux-preview-desktop.png)
+
+### Mobile
+
+## ![Mobile interface](public/images/ui-ux-preview-mobile.jpeg)
 
 ## Features
 
