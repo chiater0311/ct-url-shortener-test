@@ -7,9 +7,10 @@ import type { UrlHistoryItem } from "@/types/url";
 type UrlHistoryProps = {
   history: UrlHistoryItem[];
   onClear: () => void;
+  onDelete: (shortCode: string) => void;
 };
 
-export function UrlHistory({ history, onClear }: UrlHistoryProps) {
+export function UrlHistory({ history, onClear, onDelete }: UrlHistoryProps) {
   const [copiedShortCode, setCopiedShortCode] = useState<string | null>(null);
 
   async function handleCopy(item: UrlHistoryItem) {
@@ -83,7 +84,7 @@ export function UrlHistory({ history, onClear }: UrlHistoryProps) {
                 {formatHistoryDate(item.createdAt)}
               </p>
 
-              <div className="mt-3 flex gap-2">
+              <div className="mt-3 flex flex-wrap gap-2">
                 <a
                   href={item.shortUrl}
                   target="_blank"
@@ -99,6 +100,14 @@ export function UrlHistory({ history, onClear }: UrlHistoryProps) {
                   className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
                 >
                   {copiedShortCode === item.shortCode ? "Copied!" : "Copy"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => onDelete(item.shortCode)}
+                  className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-slate-50"
+                >
+                  Remove
                 </button>
               </div>
             </li>

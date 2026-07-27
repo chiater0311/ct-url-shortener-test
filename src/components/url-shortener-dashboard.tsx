@@ -7,6 +7,7 @@ import { UrlShortenerForm } from "@/components/url-shortener-form";
 import {
   addUrlHistoryItem,
   clearUrlHistory,
+  deleteUrlHistoryItem,
   getUrlHistory,
 } from "@/lib/url-history-storage";
 import type { ShortenUrlSuccessResponse, UrlHistoryItem } from "@/types/url";
@@ -28,6 +29,12 @@ export function UrlShortenerDashboard() {
     setHistory((currentHistory) => addUrlHistoryItem(currentHistory, result));
   }
 
+  function handleDeleteHistoryItem(shortCode: string) {
+    setHistory((currentHistory) =>
+      deleteUrlHistoryItem(currentHistory, shortCode),
+    );
+  }
+
   function handleClearHistory() {
     clearUrlHistory();
     setHistory([]);
@@ -38,7 +45,11 @@ export function UrlShortenerDashboard() {
       <UrlShortenerForm onShortened={handleShortened} />
 
       {isHistoryLoaded ? (
-        <UrlHistory history={history} onClear={handleClearHistory} />
+        <UrlHistory
+          history={history}
+          onClear={handleClearHistory}
+          onDelete={handleDeleteHistoryItem}
+        />
       ) : (
         <aside className="min-h-52 w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-lg lg:max-w-md">
           <p className="text-sm text-slate-500">Loading recent history...</p>
