@@ -47,6 +47,17 @@ export function addUrlHistoryItem(
   return updatedHistory;
 }
 
+export function deleteUrlHistoryItem(
+  history: UrlHistoryItem[],
+  shortCode: string,
+): UrlHistoryItem[] {
+  const updatedHistory = history.filter((item) => item.shortCode !== shortCode);
+
+  saveUrlHistory(updatedHistory);
+
+  return updatedHistory;
+}
+
 export function clearUrlHistory(): void {
   try {
     window.localStorage.removeItem(STORAGE_KEY);
