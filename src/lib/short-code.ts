@@ -1,7 +1,6 @@
 import { randomInt } from "node:crypto";
 
-const CHARACTERS =
-  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const CHARACTERS = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 export const SHORT_CODE_LENGTH = 7;
 

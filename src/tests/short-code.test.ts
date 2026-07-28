@@ -6,14 +6,14 @@ describe("generateShortCode", () => {
     const result = generateShortCode();
 
     expect(result).toHaveLength(SHORT_CODE_LENGTH);
-    expect(result).toMatch(/^[a-zA-Z0-9]+$/);
+    expect(result).toMatch(/^[a-z0-9]+$/);
   });
 
   it("supports a custom positive length", () => {
     const result = generateShortCode(10);
 
     expect(result).toHaveLength(10);
-    expect(result).toMatch(/^[a-zA-Z0-9]+$/);
+    expect(result).toMatch(/^[a-z0-9]+$/);
   });
 
   it.each([0, -1, 1.5])("rejects an invalid length: %s", (length) => {

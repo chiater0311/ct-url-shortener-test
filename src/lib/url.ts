@@ -38,5 +38,5 @@ export function normalizeUrl(input: string): string {
 }
 
 function hasProtocol(value: string): boolean {
-  return /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(value);
+  return /^[a-z][a-z\d+\-.]*:/.test(value);
 }

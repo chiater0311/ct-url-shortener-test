@@ -75,7 +75,7 @@ describe("urlShortenerService", () => {
 
       expect(createSpy).toHaveBeenCalledWith(
         "https://example.com/",
-        expect.stringMatching(/^[a-zA-Z0-9]{7}$/),
+        expect.stringMatching(/^[a-z0-9]{7}$/),
       );
 
       expect(result).toEqual({
